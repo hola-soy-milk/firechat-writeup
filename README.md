@@ -88,6 +88,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 ```
 
 Add these, as well as the form building modules to your `imports` array:
@@ -101,6 +102,7 @@ Add these, as well as the form building modules to your `imports` array:
     MatInputModule,
     MatIconModule,
     MatCardModule,
+    MatDividerModule,
     MatFormFieldModule,
   ],
 
@@ -196,30 +198,33 @@ Finally, we'll set up our component to connect to the realtime database to load 
 Open up `src/app/app.component.html`:
 
 ```html
-<div id="history" *ngFor="let chat of chats">
-  <mat-card>
-    <mat-card-subtitle>
-      <span>{{chat.username}} (Sent: {{chat.timestamp | date:'long'}})</span>
-    </mat-card-subtitle>
-    <mat-card-content>
-      <p>{{chat.message}}</p>
-    </mat-card-content>
-  </mat-card>
+<div id="history">
+  <div *ngFor="let chat of chats" class="mb">
+    <mat-card>
+      <mat-card-subtitle>
+        <span>{{chat.username}} (Sent: {{chat.timestamp | date:'long'}})</span>
+      </mat-card-subtitle>
+      <mat-card-content>
+        <p>{{chat.message}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
 <form id="message" [formGroup]="form" (ngSubmit)="onChatSubmit(form.value)">
-  <mat-form-field>
-    <input matInput placeholder="Username"
+  <mat-form-field appearance="outline" class="fw">
+    <mat-label>Username</mat-label>
+    <input matInput
                     formControlName="username" >
   </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Enter Chat"
+    <mat-form-field appearance="outline" class="fw">
+    <mat-label>Enter Chat</mat-label>
+      <input matInput
                       formControlName="message" >
                       <button type="submit" matSuffix mat-icon-button aria-label="Submit">
                         <mat-icon>send</mat-icon>
                       </button>
     </mat-form-field>
 </form>
-
 ```
 
 Open up `src/app/app.component.css`:
@@ -228,6 +233,8 @@ Open up `src/app/app.component.css`:
 #history {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
   width: 400px;
   height:60%;
   overflow-y: scroll;
@@ -237,6 +244,14 @@ Open up `src/app/app.component.css`:
   margin-left: auto;
   margin-right: auto;
   width: 400px;
+}
+
+.fw {
+  width: 100%
+}
+
+.mb {
+  margin-bottom: 1em;
 }
 ```
 
