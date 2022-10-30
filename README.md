@@ -244,7 +244,7 @@ Open up `src/app/app.component.css`:
 
 		ng serve --open
 
-<img width="439" alt="Pasted image 20221027114841" src="https://user-images.githubusercontent.com/656318/198254988-42bea856-1662-4876-95c3-a45bd9b5d492.png">
+<img width="438" alt="image" src="https://user-images.githubusercontent.com/656318/198885253-b95169db-1c20-4585-9f27-de0c0471585f.png">
 
 
 Back in the firebase console, we can see the chats get added. We can delete them here too
