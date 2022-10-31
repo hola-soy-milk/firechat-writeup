@@ -4,7 +4,10 @@
 - Node 16
 
 
-- Open firebase
+## Firebase setup
+
+[Open firebase](console.firebase.google.com)
+
 <img width="357" alt="Pasted image 20221027102042" src="https://user-images.githubusercontent.com/656318/198254257-2e7a8542-55c5-499d-8d54-3730a234a7b6.png">
 
 <img width="357" alt="Pasted image 20221027102042" src="https://user-images.githubusercontent.com/656318/198254364-58d5d358-7416-41dc-b6a9-50c774c1b996.png">
